@@ -1,0 +1,28 @@
+networks:
+  personalnetwork:
+    driver: bridge
+
+services:
+  web:
+    build: .
+    ports:
+      - "80:80"
+    networks:
+      - personalnetwork
+    depends_on:
+      - db
+
+  db:
+    image: mysql:latest
+    restart: always
+    environment:
+      MYSQL_DATABASE: "MYSQL_DB"
+      MYSQL_USER: "MYSQL_Mounib_USER"
+      MYSQL_PASSWORD: "AFJR*078!kjngg"
+    volumes:
+      - mysql_data:/var/lib/mysql
+    networks:
+      - personalnetwork
+
+volumes:
+  mysql_data:
