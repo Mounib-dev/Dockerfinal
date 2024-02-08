@@ -23,7 +23,7 @@ COPY apache-config.conf /etc/apache2/sites-available/000-default.conf
 
 WORKDIR /var/www/html
 
-COPY composer.json composer.lock package.json package-lock.json symfony.lock webpack.config.js phpunit.xml.dist ./
+COPY .env .env.local .env.local.php .env.test composer.json composer.lock package.json package-lock.json symfony.lock webpack.config.js phpunit.xml.dist ./
 COPY assets/ assets/
 COPY bin/ bin/
 COPY config/ config/
