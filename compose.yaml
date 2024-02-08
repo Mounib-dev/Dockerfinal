@@ -11,6 +11,8 @@ services:
       - personalnetwork
     depends_on:
       - db
+    deploy:
+      replicas: 3
 
   db:
     image: mysql:latest

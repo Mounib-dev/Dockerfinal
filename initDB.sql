@@ -1,0 +1,13 @@
+CREATE TABLE book (
+    id INT AUTO_INCREMENT NOT NULL, 
+     LONGTEXT NOT NULL, 
+    isbestseller TINYINT(1) NOT NULL, PRIMARY KEY(id)) 
+ENGINE = InnoDB;
+
+
+
+CREATE TABLE category (
+    id INT AUTO_INCREMENT NOT NULL, 
+    name LONGTEXT NOT NULL, 
+    PRIMARY KEY(id))
+ENGINE = InnoDB'
