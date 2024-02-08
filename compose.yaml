@@ -23,6 +23,8 @@ services:
       MYSQL_PASSWORD: "AFJR*078!kjngg"
     volumes:
       - mysql_data:/var/lib/mysql
+    ports:
+      - "3306:3306"
     networks:
       - personalnetwork
 
