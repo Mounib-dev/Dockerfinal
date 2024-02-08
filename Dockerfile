@@ -19,6 +19,7 @@ RUN apt-get update \
     a2enmod rewrite
 
 
+COPY apache-config.conf /etc/apache2/sites-available/000-default.conf
 
 WORKDIR /var/www/html
 
