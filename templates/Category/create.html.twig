@@ -1,0 +1,14 @@
+{% extends "base.html.twig" %}
+
+{% block title %}
+	Création d'une catégorie de livre |
+	{{ parent() }}
+{% endblock %}
+
+{% block body %}
+	<section class="container mt-4">
+		<h1 class="text-center">Création d'une catégorie de livre</h1>
+		{% include 'Category/form.html.twig' with {buttonLabel: 'Créer'} %}
+		<a href="{{ path('category.index') }}" class="btn btn-primary mt-4">Retour aux catégories</a>
+	</section>
+{% endblock %}

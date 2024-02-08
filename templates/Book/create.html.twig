@@ -1,0 +1,14 @@
+{% extends "base.html.twig" %}
+
+{% block title %}
+	Ajout d'un Livre|
+	{{ parent() }}
+{% endblock %}
+
+{% block body %}
+	<section class="container mt-4">
+		<h1 class="text-center">Ajout d'un Livre</h1>
+		{% include 'Book/form.html.twig' with {buttonLabel: 'Ajouter'} %}
+		<a href="{{ path('book.index') }}" class="btn btn-primary mt-4">Retour aux Livres</a>
+	</section>
+{% endblock %}

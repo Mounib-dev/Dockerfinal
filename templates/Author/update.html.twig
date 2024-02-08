@@ -1,0 +1,15 @@
+{% extends "base.html.twig" %}
+
+{% block title %}
+	Modification des coordonnées d'un Auteur |
+	{{ parent() }}
+{% endblock %}
+
+{% block body %}
+	<section class="container mt-4 text-center">
+		<h1 class="text-center">Modification des coordonnées de l'Auteur :
+			{{ author.firstname }} {{ author.lastname }}</h1>
+		{% include 'Author/form.html.twig' with {buttonLabel: 'Modifier'} %}
+		<a href="{{ path('author.index') }}" class="btn btn-primary mt-4">Retour aux Auteurs</a>
+	</section>
+{% endblock %}

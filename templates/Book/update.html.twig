@@ -1,0 +1,15 @@
+{% extends "base.html.twig" %}
+
+{% block title %}
+	Modification des informations d'un Livre |
+	{{ parent() }}
+{% endblock %}
+
+{% block body %}
+	<section class="container mt-4">
+		<h1 class="text-center">Modification des informations relatives au Livre :
+			{{ book.title }} de {{ book.author.firstname }} {{ book.author.lastname }}</h1>
+		{% include 'Book/form.html.twig' with {buttonLabel: 'Modifier'} %}
+		<a href="{{ path('book.index') }}" class="btn btn-primary mt-4">Retour aux étagères virtuelles</a>
+	</section>
+{% endblock %}

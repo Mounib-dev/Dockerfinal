@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    Catégories |
+    {{ parent() }}
+{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="example-wrapper">
+    <h1>{{ page_title }}</h1>
+
+    <a href="{{ path('category.create') }}" class="btn btn-primary">Créer une catégorie</a>
+    <a href="/" class="btn btn-dark">Retourner à la Bibliothèque</a>
+
+    <div class="row gy-4 mt-4">
+		{% for categorie in categories %}
+            <li>
+                {{ categorie.name }}
+            </li>
+            <a href="{{ path('category.update', {id: categorie.id}) }}" class="btn btn-warning">Modifier</a>{# Update Category #}
+            <form action="{{ path('category.delete', {id: categorie.id}) }}" method="POST" onsubmit="return confirm('Êtes-vous sur de vouloir supprimer la catégorie?')">
+                <input type="hidden" name="delete_category" value="{{ categorie.id }}">
+                <button type="submit" class="btn btn-danger">
+                <i class="bi bi-trash-fill"></i>
+                    Supprimer {# Delete Category #}
+                </button>
+            </form>
+
+     	{% endfor %}
+	</div>   
+
+</div>
+{% endblock %}
